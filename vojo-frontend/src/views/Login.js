@@ -33,6 +33,15 @@ class Login extends Component {
     }
   }
 
+  componentDidUpdate (prevProps, prevState) {
+    if (
+      prevState.loginData.error !== this.state.loginData.error &&
+      this.state.loginData.error !== null
+    ) {
+      this.handleRequestErrors()
+    }
+  }
+
   handleFieldUpdate = (fieldName, state) => {
     this.setState({
       fields: {
@@ -99,6 +108,31 @@ class Login extends Component {
     }
   }
 
+  handleRequestErrors = async () => {
+    const { error } = this.state.loginData
+    const { fields } = error
+    if (error && fields) {
+      const errorFields = stateKeysToArray(fields)
+      const newFieldObject = {}
+
+      for (let i = 0; i < errorFields.length; i++) {
+        const currentErrorField = errorFields[i]
+        newFieldObject[currentErrorField] = {
+          ...this.state.fields[currentErrorField],
+          errorMessage: fields[currentErrorField],
+          showError: true
+        }
+      }
+
+      await this.setState({
+        fields: {
+          ...this.state.fields,
+          ...newFieldObject
+        }
+      })
+    }
+  }
+
   loginSet = async(data) => {
     await this.setState({
       loginData: {
@@ -107,28 +141,31 @@ class Login extends Component {
         success: false
       }
     })
-
-    try {
-      fetch(`${process.env.REACT_APP_API}/v3/auth/login`, {
+      const response = await fetch(`${process.env.REACT_APP_API}/v3/auth/login`, {
           method:"POST",
           body: JSON.stringify(data)
       })
-      await this.setState({
-        loginData: {
-          error: null,
-          isLoading: false,
-          success: true
-        }
-      })
-    } catch (e) {
-      await this.setState({
-        loginData: {
-          error: e.response.data.error,
-          isLoading: false,
-          success: false
-        }
-      })
-    }
+
+      const resData = await response.json()
+      
+      if (!resData.error) {
+        await this.setState({
+          loginData: {
+            error: null,
+            isLoading: false,
+            success: true
+          }
+        })
+      } else {
+        console.log(resData)
+        await this.setState({
+          loginData: {
+            error: resData.error,
+            isLoading: false,
+            success: false
+          }
+        })
+      }
   }
 
   render () {
@@ -167,6 +204,7 @@ class Login extends Component {
             <div className="Login__Forms">
               <div className="Login__Forms__Input">
                 <EmailInput
+                  errorMessage={this.state.fields.username.errorMessage}
                   id="username"
                   isRequired
                   label="E-mail"
@@ -180,6 +218,7 @@ class Login extends Component {
               </div>
               <div className="Login__Forms__Input">
                 <PasswordInput
+                  errorMessage={this.state.fields.password.errorMessage}
                   id="password"
                   isRequired
                   label="Senha"
@@ -213,8 +252,8 @@ class Login extends Component {
                   <div className="Login__Forms__Button">
                     <div className="Login__Forms__Button__Wrapper">
                       <Button
-                        id="submit-register"
-                        name="submit-register"
+                        id="submit-login"
+                        name="submit-login"
                         onButtonClick={() => this.handleLoginClick()}
                         type="submit">
                           Continuar
