@@ -134,38 +134,31 @@ class Login extends Component {
   }
 
   loginSet = async(data) => {
-    await this.setState({
-      loginData: {
-        error: null,
-        isLoading: true,
-        success: false
-      }
+    const response = await fetch(`${process.env.REACT_APP_API}/v3/auth/login`, {
+        method:"POST",
+        body: JSON.stringify(data)
     })
-      const response = await fetch(`${process.env.REACT_APP_API}/v3/auth/login`, {
-          method:"POST",
-          body: JSON.stringify(data)
-      })
 
-      const resData = await response.json()
-      
-      if (!resData.error) {
-        await this.setState({
-          loginData: {
-            error: null,
-            isLoading: false,
-            success: true
-          }
-        })
-      } else {
-        console.log(resData)
-        await this.setState({
-          loginData: {
-            error: resData.error,
-            isLoading: false,
-            success: false
-          }
-        })
-      }
+    const resData = await response.json()
+    
+    if (!resData.error) {
+      await this.setState({
+        loginData: {
+          error: null,
+          isLoading: false,
+          success: true
+        }
+      })
+    } else {
+      console.log(resData)
+      await this.setState({
+        loginData: {
+          error: resData.error,
+          isLoading: false,
+          success: false
+        }
+      })
+    }
   }
 
   render () {
