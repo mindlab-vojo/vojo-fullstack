@@ -33,6 +33,15 @@ A API de autenticação já está implementada, assim como a view de Login.
 
 Qualquer dúvida, por favor, entre em contato com **[Carolina](mailto:carolina.higo@mindlab.com.br)**.
 
+## **Instruções de instalação (Frontend)**
+O projeto frontend utiliza dependencias armazenadas no registry do Github. Para que você possa fazer a instalação das dependencias sem receber um erro de autenticação `401`, é necessário fazer o login utilizando o NPM. Para isso, logue-se utilizando os seguinte comando:
+
+```sh
+npm login --registry=https://npm.pkg.github.com
+```
+
+Para soluções de erros ou mais detalhes, acesse esta [documentação](https://help.github.com/pt/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#), você pode encontrar diversos métodos de autenticação.
+
 ## **Mantenedores**
 
 👤 **Carolina Higo**
