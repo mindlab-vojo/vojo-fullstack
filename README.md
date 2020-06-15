@@ -28,8 +28,8 @@ A API de autenticação já está implementada, assim como a view de Login.
 ## **Instruções**
 1. Faça o **`clone`** deste repositório.
 2. Trabalhe localmente no seu projeto.
-3. Quando tiver finalizado, suba o seu projeto para o GitHub.
-4. Nos envie o link do seu repositório e do aplicativo online (Heroku).
+3. Quando tiver finalizado, suba o seu projeto para um **projeto privado** no GitHub.
+4. Nos envie o link do seu repositório e do aplicativo online (Heroku). Não esqueça de adicionar os nosso usuários como colaboradores do seu repositório para que possamos acessar.
 
 Qualquer dúvida, por favor, entre em contato com **[Carolina](mailto:carolina.higo@mindlab.com.br)**.
 
