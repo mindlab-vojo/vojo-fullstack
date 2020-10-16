@@ -31,7 +31,7 @@ A API de autenticação já está implementada, assim como a view de Login.
 3. Quando tiver finalizado, suba o seu projeto para um **projeto privado** no GitHub.
 4. Nos envie o link do seu repositório e do aplicativo online (Heroku). Não esqueça de adicionar os nosso usuários como colaboradores do seu repositório para que possamos acessar.
 
-Qualquer dúvida, por favor, entre em contato com **[Carolina](mailto:carolina.higo@mindlab.com.br)**.
+Qualquer dúvida, por favor, entre em contato **[conosco](mailto:devteam@vojo.com.br)**.
 
 ## **Instruções de instalação (Frontend)**
 O projeto frontend utiliza dependencias armazenadas no registry do Github. Para que você possa fazer a instalação das dependencias sem receber um erro de autenticação `401`, é necessário fazer o login utilizando o NPM. Para isso, logue-se utilizando os seguinte comando:
@@ -40,7 +40,7 @@ O projeto frontend utiliza dependencias armazenadas no registry do Github. Para 
 npm login --registry=https://npm.pkg.github.com
 ```
 
-Para soluções de erros ou mais detalhes, acesse esta [documentação](https://help.github.com/pt/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#), você pode encontrar diversos métodos de autenticação.
+Para soluções de erros ou mais detalhes, acesse esta [documentação](https://help.github.com/pt/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#), você pode encontrar diversos métodos de autenticação. Alternativamente, consulte também links externos como [esse](https://stackoverflow.com/questions/58637544/unable-to-login-to-github-package-registry).
 
 ## **Mantenedores**
 
