@@ -29,7 +29,7 @@ A API de autenticação já está implementada, assim como a view de Login.
 1. Faça o **`clone`** deste repositório.
 2. Trabalhe localmente no seu projeto.
 3. Quando tiver finalizado, suba o seu projeto para um **projeto privado** no GitHub.
-4. Nos envie o link do seu repositório e do aplicativo online (Heroku). Não esqueça de adicionar os nosso usuários como colaboradores do seu repositório para que possamos acessar.
+4. Nos envie o link do seu repositório e do aplicativo online (Heroku). Não esqueça de adicionar os nossos usuários como colaboradores do seu repositório para que possamos acessar.
 
 Qualquer dúvida, por favor, entre em contato **[conosco](mailto:devteam@vojo.com.br)**.
 
@@ -47,6 +47,8 @@ Para soluções de erros ou mais detalhes, acesse esta [documentação](https://
 👤 **Carolina Higo**
 
 👤 **Leonardo Isso**
+
+👤 **Kleber Costa**
 
 
 ## **Licenças**
