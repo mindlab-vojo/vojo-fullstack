@@ -44,10 +44,6 @@ Para soluções de erros ou mais detalhes, acesse esta [documentação](https://
 
 ## **Mantenedores**
 
-👤 **Carolina Higo**
-
-👤 **Leonardo Isso**
-
 👤 **Kleber Costa**
 
 
