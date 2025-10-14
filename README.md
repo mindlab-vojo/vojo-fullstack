@@ -1,3 +1,5 @@
+# ⚠️⚠️ DESCONTINUADO ⚠️⚠️
+
 # Projeto Teste para Desenvolvedores Fullstack Vojo
 
 Este projeto é parte do processo de seleção de desenvolvedores fullstack para a plataforma Vojo.
